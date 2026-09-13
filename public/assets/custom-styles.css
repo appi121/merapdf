@@ -1,153 +1,162 @@
-/* ============================================
-   Mera PDF - iLovePDF Style Custom CSS
-   ============================================ */
-
+/* MeraPDF - Professional PDF Tools */
 :root {
   --primary-color: #FF6B6B;
   --secondary-color: #4ECDC4;
   --bg-color: #F8F9FA;
   --text-color: #2C3E50;
   --border-color: #E1E8ED;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* ---------- Global Background & Font ---------- */
-body, html, #root, .mantine-AppShell-main {
-  background-color: var(--bg-color) !important;
-  color: var(--text-color) !important;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ---------- Navbar / Header ---------- */
-.navbar, .mantine-AppShell-header, header {
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar */
+nav, .navbar, [class*="navbar"], [class*="header"] {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
-  padding: 15px 20px !important;
-}
-
-.navbar-brand, .navbar-brand img {
-  font-size: 24px !important;
-  font-weight: bold !important;
+  box-shadow: var(--shadow);
   color: white !important;
 }
 
-/* ---------- Tool Cards ---------- */
-.tool-card, .mantine-Card-root, .mantine-Paper-root {
-  background: white !important;
-  border-radius: 15px !important;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
-  padding: 30px !important;
-  text-align: center !important;
-  transition: all 0.3s ease !important;
-  cursor: pointer !important;
-  border: 2px solid transparent !important;
+nav a, .navbar a, [class*="navbar"] a {
+  color: white !important;
 }
 
-.tool-card:hover, .mantine-Card-root:hover, .mantine-Paper-root:hover {
-  transform: translateY(-8px) !important;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
-  border-color: var(--primary-color) !important;
+/* Main Container */
+main, [class*="main"], [class*="container"] {
+  background-color: var(--bg-color);
 }
 
-.tool-card img, .tool-card .icon {
-  font-size: 48px !important;
-  margin-bottom: 15px !important;
-  display: block !important;
-}
-
-.tool-card h3 {
-  color: var(--primary-color) !important;
-  font-size: 18px !important;
-  margin: 10px 0 !important;
-  font-weight: 600 !important;
-}
-
-.tool-card p {
-  color: #666 !important;
-  font-size: 14px !important;
-  margin: 0 !important;
-}
-
-/* ---------- Buttons ---------- */
-.btn-primary, .mantine-Button-root, button[type="submit"] {
+/* Buttons */
+button, a[class*="btn"], input[type="button"], input[type="submit"] {
   background: linear-gradient(135deg, var(--primary-color) 0%, #FF5252 100%) !important;
   color: white !important;
-  padding: 12px 30px !important;
   border: none !important;
+  padding: 10px 20px !important;
   border-radius: 8px !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
   cursor: pointer !important;
-  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
   box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3) !important;
+  transition: all 0.3s ease !important;
 }
 
-.btn-primary:hover, .mantine-Button-root:hover, button[type="submit"]:hover {
-  transform: scale(1.05) !important;
+button:hover, a[class*="btn"]:hover, input[type="button"]:hover {
+  transform: translateY(-2px) !important;
   box-shadow: 0 6px 16px rgba(255, 107, 107, 0.4) !important;
 }
 
-/* ---------- Containers ---------- */
-.container {
-  max-width: 1200px !important;
-  margin: 0 auto !important;
+/* Cards/Sections */
+[class*="card"], [class*="tool"], section, .content {
+  background: white !important;
+  border-radius: 15px !important;
+  box-shadow: var(--shadow) !important;
+  border: 1px solid var(--border-color) !important;
   padding: 20px !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 20px !important;
 }
 
-/* ---------- Hero Section ---------- */
-.hero-section {
-  text-align: center !important;
-  padding: 40px 20px !important;
+[class*="card"]:hover, [class*="tool"]:hover, section:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color) !important;
+  font-weight: 700 !important;
+  margin-top: 20px !important;
+  margin-bottom: 15px !important;
+}
+
+h1 {
+  font-size: 36px !important;
+}
+
+h2 {
+  font-size: 28px !important;
+}
+
+h3 {
+  font-size: 22px !important;
+}
+
+/* Links */
+a, a[href] {
+  color: var(--primary-color) !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+a:hover, a[href]:hover {
+  color: var(--secondary-color) !important;
+  text-decoration: underline !important;
+}
+
+/* Form Elements */
+input, textarea, select {
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+  font-size: 14px !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1) !important;
+}
+
+/* Icons */
+svg, [class*="icon"], i {
+  color: var(--primary-color) !important;
+}
+
+/* Gradients */
+[class*="header"], [class*="hero"], [class*="banner"] {
   background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%) !important;
   border-radius: 15px !important;
-  margin-bottom: 30px !important;
+  padding: 40px 20px !important;
 }
 
-.hero-section h1 {
-  color: var(--primary-color) !important;
-  font-size: 36px !important;
-  margin: 0 0 10px 0 !important;
-  font-weight: 700 !important;
-}
-
-.hero-section p {
-  color: #666 !important;
-  font-size: 16px !important;
-  margin: 0 !important;
-}
-
-/* ---------- Headings ---------- */
-h1, h2, h3 {
-  color: var(--primary-color) !important;
-  font-weight: 700 !important;
-}
-
-/* ---------- Font Size बड़ा ---------- */
-html {
-  font-size: 17px !important;
-}
-
-/* ---------- Tools Container Grid ---------- */
-.tools-container {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-  gap: 20px !important;
-  padding: 30px !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-}
-
-/* ---------- Responsive ---------- */
+/* Responsive */
 @media (max-width: 768px) {
-  .tools-container {
-    grid-template-columns: 1fr !important;
+  h1 { font-size: 24px !important; }
+  h2 { font-size: 20px !important; }
+  h3 { font-size: 18px !important; }
+  
+  [class*="card"], [class*="tool"] {
     padding: 15px !important;
+    margin-bottom: 15px !important;
   }
   
-  .hero-section h1 {
-    font-size: 24px !important;
+  button, a[class*="btn"] {
+    padding: 8px 16px !important;
+    font-size: 14px !important;
   }
-  
-  h1, h2, h3 {
-    font-size: 1.5rem !important;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[class*="card"], [class*="tool"], section {
+  animation: slideIn 0.5s ease !important;
 }
