@@ -10,6 +10,6 @@ ENV UI_CUSTOM_FILES_ENABLED="true"
 COPY index.html /customFiles/static/index.html
 COPY custom-styles.css /customFiles/static/custom.css
 COPY favicon.ico /customFiles/static/favicon.ico
-COPY logo.png /customFiles/static/logo.png
+COPY Logo.png /customFiles/static/logo.png
 
 EXPOSE 8080
