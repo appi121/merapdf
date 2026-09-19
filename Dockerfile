@@ -8,6 +8,7 @@ ENV UI_CUSTOM_FILES_ENABLED="true"
 
 # Custom Files को सही जगह पर Copy करें
 COPY index.html /customFiles/static/index.html
+COPY override-head.js /customFiles/static/override-head.js
 COPY custom-styles.css /customFiles/static/custom.css
 COPY favicon.ico /customFiles/static/favicon.ico
 COPY Logo.png /customFiles/static/logo.png
