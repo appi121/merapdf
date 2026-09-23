@@ -1,12 +1,16 @@
 FROM stirlingtools/stirling-pdf:latest
 
-# Files को public folder से copy करो
-COPY public/modern-logo/* /usr/local/tomcat/webapps/ROOT/modern-logo/
-COPY public/assets/custom-styles.css /usr/local/tomcat/webapps/ROOT/assets/custom-styles.css
-COPY override-head.js /usr/local/tomcat/webapps/ROOT/
+ENV UI_APPNAME="Mera PDF"
+ENV UI_APPNAMENAVBAR="Mera PDF"
+ENV UI_HOMEDESCRIPTION="मुफ्त हिंदी PDF टूल्स - Mera PDF"
+ENV SYSTEM_DEFAULTLOCALE="hi-IN"
+ENV UI_CUSTOM_FILES_ENABLED="true"
 
-# index.html में script tag inject करो
-RUN sed -i 's|</head>|<script src="/override-head.js"></script>\n</head>|g' /usr/local/tomcat/webapps/ROOT/index.html || true
+# Custom Files को सही जगह पर Copy करें
+COPY index.html /customFiles/static/index.html
+COPY override-head.js /customFiles/static/override-head.js
+COPY custom-styles.css /customFiles/static/custom.css
+COPY favicon.ico /customFiles/static/favicon.ico
+COPY Logo.png /customFiles/static/logo.png
 
 EXPOSE 8080
-CMD ["catalina.sh", "run"]
